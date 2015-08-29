@@ -1,0 +1,108 @@
+/* COLORS */
+$background: #E4E4E4;
+$white: #fff;
+$light-blue: #61D2DC;
+$darker-blue: #41B3D3;
+$font-color: #444444;
+
+
+html,body{ font-family: 'Oswald', cursive; background-color: $background; color:$font-color;}
+nav{
+    &.fixed-navigation{
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 9999;
+        width: 100%;
+        height: 50px;
+        background-color: #000;
+        background-color: rgba(0,0,0,0.6);
+        transition: background-color 0.5s ease;
+
+        &:hover{
+            background-color: #000;
+            background-color: rgba(0,0,0,1);
+        }
+    }
+
+    ul.main-navigation{
+                float:left;
+
+        li{
+            display: inline-block;
+            margin:10px;
+            color:$white;
+            &.logo{
+                border:3px solid $white;
+                padding:3px;
+                color:$white;
+            }
+        }
+    }
+
+    ul.social-navigation{
+        float:right;
+        li{
+            display: inline-block;
+            margin:10px;
+        }
+    }
+}
+
+
+.triangle{
+    -ms-transform: matrix(1, 0.07, 0, -8, 0, 0); /* IE 9 */
+    -webkit-transform: matrix(1, 0.07, 0, -8, 0, 0); /* Safari */
+    transform: matrix(1, 0.07, 0, -8, 0, 0);
+    background-color: $light-blue;
+}
+
+section{
+    min-height:350px;
+    padding:20px;
+}
+
+#home{
+    background: url('../images/build-code.jpeg') center center fixed;
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+    height:90vh;
+
+    h1{
+        font-size:75px;
+        border: 8px solid $white;
+        color:$white;
+        width:350px;
+        text-align: center;
+        padding:10px;
+        margin:5% auto 5% auto;
+    }
+
+    .quotes{
+        color:$white;
+        font-size: 50px;        
+        margin: 0 auto;
+        width:65%;
+        line-height: 60px;
+        text-align: center;
+        span{
+            &.quote_author{
+                display: block;
+                font-size: 25px;
+            }
+        }
+    }
+}
+
+#about{
+    position: relative;
+    z-index: 1;
+    background-color: $light-blue;
+
+    blockquote{
+        font-weight: 300;
+        font-size: 120px;
+    }
+}
