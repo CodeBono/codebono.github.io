@@ -5,6 +5,10 @@ $light-blue: #61D2DC;
 $darker-blue: #41B3D3;
 $font-color: #444444;
 
+/* BREAKPOINTS */
+$mobile: new-breakpoint(max-width 500px 4);
+
+
 
 html,body{ font-family: 'Oswald', cursive; background-color: $background; color:$font-color;}
 nav{
@@ -50,11 +54,15 @@ nav{
 }
 
 
-.triangle{
-    -ms-transform: matrix(1, 0.07, 0, -8, 0, 0); /* IE 9 */
-    -webkit-transform: matrix(1, 0.07, 0, -8, 0, 0); /* Safari */
-    transform: matrix(1, 0.07, 0, -8, 0, 0);
-    background-color: $light-blue;
+// .triangle{
+//     -ms-transform: matrix(1, 0.07, 0, -10, 0, 0); /* IE 9 */
+//     -webkit-transform: matrix(1, 0.07, 0, -10, 0, 0); /* Safari */
+//     transform: matrix(1, 0.07, 0, -10, 0, 0);
+//     background-color: $light-blue;
+// }
+
+.container{
+        @include outer-container;
 }
 
 section{
@@ -68,13 +76,13 @@ section{
                 -moz-background-size: cover;
                 -o-background-size: cover;
                 background-size: cover;
-    height:90vh;
+    height:95vh;
 
     h1{
         font-size:75px;
         border: 8px solid $white;
         color:$white;
-        width:350px;
+        //width:350px;
         text-align: center;
         padding:10px;
         margin:5% auto 5% auto;
@@ -84,7 +92,6 @@ section{
         color:$white;
         font-size: 50px;        
         margin: 0 auto;
-        width:65%;
         line-height: 60px;
         text-align: center;
         span{
@@ -105,4 +112,29 @@ section{
         font-weight: 300;
         font-size: 120px;
     }
+}
+
+#blog{
+    .blog-post{
+
+        a{ text-decoration: none; display: block; color:$font-color; height:250px;}
+
+        @include span-columns(4);
+        @include omega(3n);
+
+        @include media($mobile) {
+            @include span-columns(12);
+        }
+    }
+}
+
+
+.post-image img{
+position: relative; 
+  top: 0; 
+  left: 0; 
+    
+  /* Preserve aspet ratio */
+  min-width: 100%;
+  min-height: 100%;
 }
