@@ -5,8 +5,11 @@ $light-blue: #61D2DC;
 $darker-blue: #41B3D3;
 $font-color: #444444;
 
+$grid-columns: 12 !default;
+
 /* BREAKPOINTS */
-$mobile: new-breakpoint(max-width 500px 4);
+ $mobile: new-breakpoint(max-width 480px 12);
+
 
 
 
@@ -30,7 +33,7 @@ nav{
     }
 
     ul.main-navigation{
-                float:left;
+        float:left;
 
         li{
             display: inline-block;
@@ -82,7 +85,7 @@ section{
         font-size:75px;
         border: 8px solid $white;
         color:$white;
-        //width:350px;
+        width:350px;
         text-align: center;
         padding:10px;
         margin:5% auto 5% auto;
@@ -115,26 +118,45 @@ section{
 }
 
 #blog{
-    .blog-post{
+    .featurePanel {
+        @include span-columns(6);
+        @include omega(2n);
 
-        a{ text-decoration: none; display: block; color:$font-color; height:250px;}
+        position: relative;
+        overflow: hidden;
+        height:300px;
 
-        @include span-columns(4);
-        @include omega(3n);
 
-        @include media($mobile) {
-            @include span-columns(12);
+        .featurePanel-header {
+            top: 50%;
+            left: 8%;
+
+             h1 a{
+                display: inline;
+                background: white;
+                line-height: inherit;
+                padding: 0 10px;
+                position: absolute;
+                z-index: 3;
+                font-size: 50px;
+                color: $font-color;
+                text-decoration: none;
+                margin-top: 15px;
+            }
+        }
+
+
+
+        .featurePanel-image {
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%) scale(1.01);
+            -ms-transform: translate(-50%, -50%) scale(1.01);
+            transform: translate(-50%, -50%) scale(1.01);
+            position: absolute;
+            z-index: 1;
+            width: 100%;
         }
     }
-}
 
-
-.post-image img{
-position: relative; 
-  top: 0; 
-  left: 0; 
-    
-  /* Preserve aspet ratio */
-  min-width: 100%;
-  min-height: 100%;
 }

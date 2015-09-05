@@ -5,7 +5,7 @@ title: CodeBono
 
     <section id="home">
       <div class="container">
-          <h1 class="col-16-16">{{ page.title }}</h1>
+          <h1>{{ page.title }}</h1>
 
           <div class="quotes col-16-16">
             Good code matters. We help by making better code and better coders.
@@ -25,14 +25,31 @@ title: CodeBono
    </section>
 
    <section id="blog">
-     <div class="container">
+   <div class="container">
         {% for post in site.posts %}
-          <div class="blog-post">
-            <h3><a href="{{ post.url }}" style="background: url('../{{post.image}}') center center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">{{ post.title }}</a></h3>
-          </div>
+          <article class="featurePanel">
+            <header class="featurePanel-header">
+              <h1>
+                <a href="{{post.url}}">{{post.title}}</a>
+              </h1>
+            </header>
+            <img src="../{{post.image}}" class="featurePanel-image" alt="">
+          </article>
         {% endfor %}
-     </div>
+    </div>
    </section>
+
+
+
+
+
+
+
+
+
+
+
+
 
     <section id="something-else">
      {% include pages/about-section.html %}
