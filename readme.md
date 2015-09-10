@@ -1,5 +1,5 @@
 #CodeBono Website
-Powered by [Middleman](https://middlemanapp.com/) and [Jekyll](http://jekyllrb.com/docs/installation/)
+Powered by [Jekyll](http://jekyllrb.com/docs/installation/)
 
 ##Develop on your machine
 **In progress**
