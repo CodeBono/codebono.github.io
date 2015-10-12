@@ -128,17 +128,19 @@ section{
         
         @include media($mobile) {
           @include span-columns(12);
+          height:800px;
         }
          @include media($medium) {
           @include span-columns(12);
+          height:800px;
         }
         @include media($large) {
           @include span-columns(6);
+          height:300px;
         }
 
         position: relative;
         overflow: hidden;
-        height:300px;
 
 
         .featurePanel-header {
@@ -170,7 +172,6 @@ section{
             position: absolute;
             z-index: 1;
             width: 100%;
-            height:75%;
         }
     }
 
