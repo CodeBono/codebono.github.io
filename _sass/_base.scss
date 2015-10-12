@@ -8,7 +8,11 @@ $font-color: #444444;
 $grid-columns: 12 !default;
 
 /* BREAKPOINTS */
- $mobile: new-breakpoint(max-width 480px 12);
+ $mobile: new-breakpoint(max-width 40em);
+ $medium: new-breakpoint(min-width 40.063em);
+ $large: new-breakpoint(min-width 64.063em);
+
+
 
 
 
@@ -119,8 +123,18 @@ section{
 
 #blog{
     .featurePanel {
-        @include span-columns(6);
-        @include omega(2n);
+       
+        @include span-columns(4);
+        
+        @include media($mobile) {
+          @include span-columns(12);
+        }
+         @include media($medium) {
+          @include span-columns(12);
+        }
+        @include media($large) {
+          @include span-columns(6);
+        }
 
         position: relative;
         overflow: hidden;
@@ -156,6 +170,7 @@ section{
             position: absolute;
             z-index: 1;
             width: 100%;
+            height:75%;
         }
     }
 
